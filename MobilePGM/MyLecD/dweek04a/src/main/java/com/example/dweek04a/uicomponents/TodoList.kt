@@ -16,35 +16,42 @@ import com.example.dweek04a.model.TodoItemFactory
 import com.example.dweek04a.model.TodoStatus
 
 @Composable
-fun TodoList(todoList: MutableList<Item>, modifier: Modifier = Modifier) {
+fun TodoList(
+    todoList: List<Item>, onStatusChange: (Item, Boolean) -> Unit,
+    modifier: Modifier = Modifier
+) {
     val scrollState = rememberScrollState()
     Column(
         modifier = modifier
             .fillMaxWidth()
             .verticalScroll(scrollState)
     ) {
-        todoList.forEachIndexed { index, item ->
+        todoList.forEach { item ->
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 4.dp)
+                    .padding(vertical = 4.dp, horizontal = 8.dp)
             ) {
-                Row {
-                    TodoCheckbox(checked = item.status == TodoStatus.COMPLETED) { checked ->
-                        todoList[index] =
-                            item.copy(status = if (checked) TodoStatus.COMPLETED else TodoStatus.PENDING)
-                    }
+                Row(modifier = Modifier.padding(12.dp)) {
+                    TodoCheckbox(
+                        checked = item.status == TodoStatus.COMPLETED,
+                        onCheckedChange = { checked ->
+                            onStatusChange(item, checked)
+                        })
                     TodoItem(item = item)
                 }
-
             }
         }
     }
 }
 
+
 @Preview
 @Composable
 private fun TodoListPreview() {
-    TodoList(todoList = TodoItemFactory.makeTodoList())
+    TodoList(
+        todoList = TodoItemFactory.makeTodoList(),
+        onStatusChange = { _, _ -> }
+    )
 
 }

@@ -1,6 +1,7 @@
 package com.example.dweek04a.uicomponents
 
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -11,6 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.dweek04a.model.Item
 import com.example.dweek04a.model.TodoItemFactory
 
@@ -18,11 +20,11 @@ import com.example.dweek04a.model.TodoItemFactory
 fun TodoItemInput(todoList: MutableList<Item>, modifier: Modifier = Modifier) {
     var textState by remember { mutableStateOf("") }
 
-    Row(modifier = modifier) {
+    Row(modifier = modifier.padding(vertical = 8.dp,horizontal = 8.dp )) {
         TextField(
             value = textState,
             onValueChange = { textState = it },
-            label = { Text("할 일 입력") }
+            label = { Text("할 일을 입력하세요") }
         )
         Button(
             onClick = {
@@ -33,7 +35,9 @@ fun TodoItemInput(todoList: MutableList<Item>, modifier: Modifier = Modifier) {
                     todoList.add(Item(textState, formattedTime))
                     textState = ""
                 }
-            }
+            },
+            modifier = Modifier
+                .padding(start = 8.dp, top = 4.dp),
         ) {
             Text(text = "추가")
         }

@@ -3,6 +3,7 @@ package com.example.dweek04a.uicomponents
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -16,7 +17,7 @@ import com.example.dweek04a.model.TodoStatus
 
 @Composable
 fun TodoItem(item: Item, modifier: Modifier = Modifier) {
-    Column {
+    Column (modifier = modifier.padding(vertical = 8.dp,horizontal = 8.dp)){
         Text(
             text = item.content,
             fontSize = 16.sp,
