@@ -2,4 +2,4 @@
 
 실습 코드와 과제 코드가 모두 담겨 있습니다.
 
-MobilePMG > task2 : 과제2-인형옷입히기 
+MobilePGM > task2 : 과제2-인형옷입히기 
