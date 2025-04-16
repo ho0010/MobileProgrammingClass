@@ -22,6 +22,31 @@ object ImageListFactory {
             buttonType = ButtonType.EMOJI,
             likes = 100,
             dislikes = 15,
+        ), ImageData(
+            imageUri = ImageUri.ResImage(R.drawable.img3),
+            buttonType = ButtonType.EMOJI,
+            likes = 100,
+            dislikes = 15,
+        ), ImageData(
+            imageUri = ImageUri.ResImage(R.drawable.img3),
+            buttonType = ButtonType.EMOJI,
+            likes = 100,
+            dislikes = 15,
+        ), ImageData(
+            imageUri = ImageUri.ResImage(R.drawable.img3),
+            buttonType = ButtonType.EMOJI,
+            likes = 100,
+            dislikes = 15,
+        ), ImageData(
+            imageUri = ImageUri.ResImage(R.drawable.img3),
+            buttonType = ButtonType.EMOJI,
+            likes = 100,
+            dislikes = 15,
+        ), ImageData(
+            imageUri = ImageUri.ResImage(R.drawable.img3),
+            buttonType = ButtonType.EMOJI,
+            likes = 100,
+            dislikes = 15,
         )
 
     )

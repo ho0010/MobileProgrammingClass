@@ -23,3 +23,4 @@ rootProject.name = "MyLecD"
 include(":app")
 include(":dweek04a")
 include(":dweek05a")
+include(":dweek07a")
